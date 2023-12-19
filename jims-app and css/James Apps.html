@@ -1,0 +1,209 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI CALCULATOR</title>
+    <link rel="icon" type="image/x-icon" href="/jims-app and css/bmi.jpg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="level1.css">
+</head>
+<body>
+    <div class="bmi">
+    <div class="containerbox row justify-content-center">
+    <div class="exercises col-md-4">
+            <div class="tips_overweight">
+                <h3>Tips: </h3>
+                <p>
+                <h5>Balanced and Healthy Diet:</h5>
+                <br>
+                    * Focus on a balanced diet that includes a variety of nutrient-dense foods such as fruits, vegetables, whole grains, lean proteins, and healthy fats.
+                <br>    
+                    * Be mindful of portion sizes to avoid overeating. Eating smaller, more frequent meals throughout the day can help regulate hunger and prevent excessive calorie intake.
+                </p>
+                <br>
+                <p>
+                <h5>Regular Physical Activity:</h5>
+                <br>
+                    * Engage in regular physical activity to increase energy expenditure and promote weight loss. 
+                <br>
+                    * Choose activities that you enjoy, as it increases the likelihood of adherence to an exercise routine. 
+                </p>
+                <br>
+                <p>
+                <h5>Behavioral Changes and Mindful Eating:</h5>
+                <br>
+                    * Pay attention to your eating habits and practice mindful eating. Eat slowly, savoring each bite, and listen to your body's hunger and fullness cues. This can help prevent overeating.
+                <br>
+                    * Identify and address emotional triggers for overeating. Stress, boredom, and other emotions can lead to unhealthy eating habits. Find alternative ways to cope with emotions, such as exercise, meditation, or talking to a supportive friend or professional.
+                </p>
+            </div>
+            <div class="tips_normal">
+                <h3>Tips: </h3>
+                <p>
+                    <h5>Balanced and Nutrient-Rich Diet:</h5>
+                    <br>
+                        * Consume a well-balanced diet that includes a variety of nutrient-dense foods. Focus on fruits, vegetables, whole grains, lean proteins, and healthy fats.
+                    <br>    
+                        * Be mindful of portion sizes to avoid overeating. Pay attention to hunger and fullness cues, and try to eat slowly to give your body time to signal when it's satisfied
+                    <br>
+                    <p>
+                    <h5>Regular Physical Activity:</h5>
+                    <br>
+                        * Engage in regular physical activity to support weight management and overall health.
+                    <br>
+                        * Choose activities you enjoy to make exercise a sustainable part of your routine. This could include walking, jogging, cycling, swimming, or participating in sports.
+                    </p>
+                    <br>
+                    <p>
+                    <h5>Lifestyle and Stress Management:</h5>
+                    <br>
+                        * Prioritize sufficient sleep, as inadequate sleep can disrupt metabolism and contribute to weight gain. 
+                    <br>
+                        * Manage stress through techniques like mindfulness, meditation, deep breathing, or yoga. Chronic stress can lead to unhealthy eating habits and contribute to weight gain.
+                    </p>
+            </div>
+            <div class="tips_underweight">
+                <h3>Tips: </h3>
+                <p>
+                    <h5>Consult a Healthcare Professional:</h5>
+                    <br>
+                        * Before making any significant changes to your diet or lifestyle, it's advisable to consult with a healthcare professional, such as a doctor or a registered dietitian. They can assess your overall health and provide personalized recommendations.
+                    <br>
+                    <p>
+                    <h5>Increase Caloric Intake:</h5>
+                    <br>
+                        * To gain weight, you need to consume more calories than your body burns. Include nutrient-dense, calorie-rich foods in your diet, such as nuts, seeds, avocados, olive oil, and full-fat dairy products.
+                    <br>
+                    </p>
+                    <br>
+                    <p>
+                    <h5>Eat Regular, Balanced Meals:</h5>
+                    <br>
+                        * Aim for three main meals and snacks in between. Include a balance of carbohydrates, proteins, and healthy fats in each meal. Include a variety of food groups to ensure you get a wide range of nutrients.
+                    <br>
+                    </p>
+            </div>
+    </div>
+            <div class="box">
+                    <h1><b>BMI Calculator</b></h1>
+                        <h4>Check your BMI</h4>
+        
+        <div class="input-area row-12">
+                    <h2>Find Your BMI</h2>
+        <div class="row">
+                <label for="height-input" class="col">
+                        <p>Height:</p>
+                        <input type="number" id="height-input" name="height-input" class="col-12" placeholder="cm">
+                        <br>
+                        <span id="height-error"></span>
+                </label>
+
+                <label for="weight-input"class="col">
+                        <p>Weight:</p>
+                        <input type="number" id="weight-input" class="col-12" placeholder="kg">
+                        <br>
+                        <span id="weight-error"></span>
+                </label>
+            </div>
+            <div class="btn-div">
+                <button id="btn">
+                    <span>Check Out YourSelf</span>
+                </button>
+            </div>
+        </div>
+        <div id="output-area">
+                <div class="see-result"><p>See Result:</p>
+                <p id="output">
+                    <script src="app.js"></script>
+                 </p>
+             </div>
+            </div>
+    </div>
+    <div class="recommend col-md-4">
+        <div class="exercises_overweight">
+                <h3>Exercises</h3>
+                <p>
+                <h5>Cardiovascular Exercises:</h5>
+                <br>
+                    * <b>Walking:</b> A simple and low-impact exercise, walking is accessible to most people. Aim for at least 30 minutes of brisk walking on most days of the week.
+                <br>    
+                 <b>* Jogging/Running:</b> For those with a higher fitness level, jogging or running can be effective for burning calories. Start at a pace that suits your fitness level and gradually increase intensity.
+                </p>
+                <br>
+                <p>
+                <h5>Strength Training:</h5>
+                <br>
+                    * <b>Resistance Exercises:</b> Incorporate strength training exercises using resistance bands, dumbbells, or weight machines. Building muscle mass can boost metabolism and aid in weight management. 
+                <br>
+                    * <b>Bodyweight Exercises: </b> Include bodyweight exercises like squats, lunges, push-ups, and planks. These exercises engage multiple muscle groups and help improve overall strength.
+                </p>
+                <br>
+                <p>
+                <h5>Interval Training:</h5>
+                <br>
+                    * <b>High-Intensity Interval Training (HIIT):</b> HIIT involves short bursts of intense exercise followed by periods of rest or lower-intensity activity. It's an efficient way to burn calories and improve cardiovascular fitness.
+                <br>
+                    * <b>Circuit Training:</b> Combine strength training and cardiovascular exercises in a circuit format, moving from one exercise to the next with minimal rest. This keeps the heart rate elevated while building strength.
+        </div>
+        <div class="exercises_normal">
+            <h3>Exercises</h3>
+            <p>
+            <h5>Cardiovascular Exercises:</h5>
+            <br>
+                * <b>Running or Jogging:</b> Helps improve cardiovascular health.
+            <br>    
+                * <b>Jogging/Running:</b> For those with a higher fitness level, jogging or running can be effective for burning calories. Start at a pace that suits your fitness level and gradually increase intensity.
+            </p>
+            <br>
+            <p>
+            <h5>Flexibility and Balance:</h5>
+            <br>
+                * <b>Yoga:</b> Enhances flexibility, balance, and mental well-being. 
+            <br>
+                * <b>Pilates:</b> Strengthens core muscles and improves posture.
+            </p>
+            <br>
+            <p>
+            <h5>Sports and Recreational Activities:</h5>
+            <br>
+                * <b>Tennis, Badminton, or Racquetball: </b> Great for agility and coordination.
+            <br>
+                * <b>Hiking or Nature Walks:</b> Provides both physical activity and mental relaxation. 
+            <br>
+        </div>
+        <div class="exercises_underweight">
+            <h3>Exercises</h3>
+            <p>
+            <h5>Strength Training:</h5>
+            <br>
+                * <b>Compound Exercises: </b> Include exercises like squats, deadlifts, and bench presses to target multiple muscle groups.
+            <br>    
+                * <b>Bodyweight Exercises: </b> Push-ups, pull-ups, dips, and bodyweight squats can be effective.
+            </p>
+            <br>
+            <p>
+            <h5>Resistance Training:</h5>
+            <br>
+                * <b>Use Resistance Bands:</b> Incorporate resistance bands for exercises like bicep curls, leg presses, and lateral raises.
+            <br>
+            </p>
+            <br>
+            <p>
+            <h5>Cardiovascular Exercises:</h5>
+            <br>
+                * <b>Avoid Excessive Cardio: </b> While some cardiovascular exercise is beneficial, excessive cardio can burn too many calories. Opt for moderate amounts to maintain cardiovascular health.
+            </p>
+            <p>
+            <h5>Functional Exercises:</h5>
+            <br>
+            <b>Functional Movements:</b> Functional Movements:
+            </p>
+            <br>
+        </div>
+    </div>
+</div>
+</div>
+
+</body>
+</html>

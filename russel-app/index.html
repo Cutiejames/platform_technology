@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+      body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      height: 100vh;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      transition: background-color 0.5s ease, color 0.5s ease;
+    }
+
+    #hangman {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    #hint {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    #word-display {
+      font-size: 36px;
+      margin-bottom: 20px;
+      letter-spacing: 10px;
+    }
+
+    #letters {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .letter {
+      width: 30px;
+      height: 30px;
+      border: 1px solid #ccc;
+      margin: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 18px;
+      background-color: #fff;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .letter:hover {
+      background-color: #ddd;
+    }
+
+    .game-container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.5s ease;
+    }
+
+    /* Dark Mode Styles */
+    body.dark-mode {
+      background-color: #333;
+      color: #fff;
+    }
+
+    body.dark-mode #letters .letter {
+      background-color: #555;
+      color: #fff;
+      border-color: #555;
+    }
+
+    body.dark-mode .game-container {
+      background-color: #444;
+    }
+
+    /* Toggle Button Styles */
+    .toggle-container {
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+    }
+
+    .toggle-label {
+      margin-right: 10px;
+      font-size: 16px;
+    }
+
+    .toggle-btn {
+      position: relative;
+      display: inline-block;
+      width: 50px;
+      height: 26px;
+    }
+
+    .toggle-btn input {
+      display: none;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: 0.4s;
+      border-radius: 34px;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 22px;
+      width: 22px;
+      left: 2px;
+      bottom: 2px;
+      background-color: white;
+      transition: 0.4s;
+      border-radius: 50%;
+    }
+
+    input:checked + .slider {
+      background-color: #2196F3;
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(24px);
+    }
+
+    .slider.round {
+      border-radius: 34px;
+    }
+
+    .slider.round:before {
+      border-radius: 50%;
+    }
+  </style>
+  <title>Hangman Game</title>
+</head>
+<title>Hangman Game</title>
+</head>
+<body>
+  <div id="hangman">Hangman Game</div>
+  <div id="hint">Hint: <span id="hint-text"></span></div>
+  <div id="word-display"></div>
+  <div id="letters"></div>
+  <div class="toggle-container">
+    <span class="toggle-label">Dark theme:</span>
+    <label class="toggle-btn">
+      <input type="checkbox" onclick="toggleMode()">
+      <span class="slider round"></span>
+    </label>
+  </div>
+</div>
+
+  <script>
+    const wordsWithHints = [
+      { word: 'javascript', hint: 'A programming language for the web' },
+      { word: 'html', hint: 'A markup language for creating web pages' },
+      { word: 'css', hint: 'A style sheet language for describing the look and formatting of a document written in HTML' },
+      { word: 'hangman', hint: 'A word-guessing game' },
+      { word: 'developer', hint: 'A person who writes code to create software applications' },
+      { word: 'openai', hint: 'An artificial intelligence research lab' },
+    ];
+
+    let selectedWordInfo = wordsWithHints[Math.floor(Math.random() * wordsWithHints.length)];
+    let selectedWord = selectedWordInfo.word;
+    let hint = selectedWordInfo.hint;
+    let guessedLetters = new Set();
+    let remainingAttempts = 6;
+
+    function displayWord() {
+      const wordDisplay = document.getElementById('word-display');
+      wordDisplay.innerHTML = selectedWord
+        .split('')
+        .map(letter => (guessedLetters.has(letter) ? letter : '_'))
+        .join(' ');
+
+      if (wordDisplay.innerHTML === selectedWord.split('').join(' ')) {
+        alert('Congratulations! You guessed the word!');
+        resetGame();
+      }
+    }
+
+    function displayLetters() {
+      const lettersContainer = document.getElementById('letters');
+      lettersContainer.innerHTML = '';
+
+      for (let letter of 'abcdefghijklmnopqrstuvwxyz') {
+        const letterElement = document.createElement('div');
+        letterElement.className = 'letter';
+        letterElement.textContent = letter;
+        letterElement.addEventListener('click', () => guessLetter(letter));
+        lettersContainer.appendChild(letterElement);
+      }
+    }
+
+    function guessLetter(letter) {
+      if (!guessedLetters.has(letter)) {
+        guessedLetters.add(letter);
+
+        if (!selectedWord.includes(letter)) {
+          remainingAttempts--;
+
+          if (remainingAttempts === 0) {
+            alert(`Game over! The word was: ${selectedWord}`);
+            resetGame();
+          }
+        }
+
+        displayWord();
+        displayLetters();
+        updateHangman();
+      }
+    }
+
+    function updateHangman() {
+      const hangmanElement = document.getElementById('hangman');
+      hangmanElement.textContent = `Remaining Attempts: ${remainingAttempts}`;
+    }
+
+    function resetGame() {
+      guessedLetters.clear();
+      remainingAttempts = 6;
+      selectedWordInfo = wordsWithHints[Math.floor(Math.random() * wordsWithHints.length)];
+      selectedWord = selectedWordInfo.word;
+      hint = selectedWordInfo.hint;
+      displayWord();
+      displayLetters();
+      updateHangman();
+      displayHint();
+    }
+
+    function displayHint() {
+      const hintText = document.getElementById('hint-text');
+      hintText.textContent = hint;
+    }
+
+    function toggleMode() {
+      const body = document.body;
+      body.classList.toggle('dark-mode');
+    }
+
+    // Initial setup
+    displayWord();
+    displayLetters();
+    updateHangman();
+    displayHint();
+  </script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flames Game</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    input {
+      margin: 10px;
+      padding: 5px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    p {
+      font-size: 20px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Flames Game</h1>
+  
+  <label for="yourName">Your Name:</label>
+  <input type="text" id="yourName" placeholder="Your Name" required>
+
+  <label for="partnerName">Partner's Name:</label>
+  <input type="text" id="partnerName" placeholder="Partner's Name" required>
+
+  <button onclick="calculateFlames()">Calculate Flames</button>
+
+  <p id="result"></p>
+
+  <script>
+    function calculateFlames() {
+      var yourName = document.getElementById('yourName').value.toLowerCase();
+      var partnerName = document.getElementById('partnerName').value.toLowerCase();
+
+      var flameString = 'flames';
+      var result = '';
+
+      for (var i = 0; i < yourName.length; i++) {
+        var char = yourName[i];
+        if (partnerName.includes(char)) {
+          partnerName = partnerName.replace(char, '');
+          yourName = yourName.replace(char, '');
+        }
+      }
+
+      var totalCount = yourName.length + partnerName.length;
+      var flamesCount = flameString.length;
+
+      while (flameString.length > 1) {
+        var indexToRemove = (totalCount % flameString.length - 1 + flameString.length) % flameString.length;
+        flameString = flameString.substring(0, indexToRemove) + flameString.substring(indexToRemove + 1);
+      }
+
+      switch (flameString) {
+        case 'f':
+          result = 'Friendship';
+          break;
+        case 'l':
+          result = 'Love';
+          break;
+        case 'a':
+          result = 'Affection';
+          break;
+        case 'm':
+          result = 'Marriage';
+          break;
+        case 'e':
+          result = 'Enemy';
+          break;
+        case 's':
+          result = 'Sibling';
+          break;
+        default:
+          result = 'Error';
+      }
+
+      document.getElementById('result').innerText = 'Result: ' + result;
+    }
+  </script>
+</body>
+</html>

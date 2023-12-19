@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Kanit&family=Oswald:wght@600&family=Pacifico&family=Signika:wght@500&display=swap');
+html,body{
+    width: 100vw;
+    height: auto;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+    overflow-y: scroll;
+}
+body{
+  text-align: center;
+  font-family: 'Signika', sans-serif;
+  background-color: rgb(129, 209, 236);
+}
+.box{
+  background-color: rgb(164, 217, 235);
+  width: 700px;
+  height: auto;
+  flex-wrap: wrap;
+  border-radius: 40px;
+  padding: 20px 0;
+  box-shadow: 15px 15px rgb(89, 112, 119);
+  position: relative;
+  color: #001965;
+}
+.input-area{
+  margin: 30px 10px;
+  background-color: #dfefee;
+  padding: 30px 30px;
+  border-radius: 40px;
+  box-shadow: 4px 4px rgba(146, 144, 144, 0.596);
+}
+input{
+  border-radius: 30px;
+  border: 2px solid black;
+  text-align: end;
+  padding: 8px;
+  height: 50px;
+  color: #001965; 
+}
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button{
+  margin: 0 10px;
+  width: 25px;
+  height: 25px;
+}
+label p{
+  text-align: left;
+  margin-bottom: 10px;
+  color: #001965;
+  font-size: 18px;
+}
+.input-area h2{
+  color: #001965;
+  text-align: left;
+  margin-bottom: 25px;
+}
+input::placeholder{
+  color: #001965;
+}
+#btn{
+  border-radius: 40px;
+  text-align: center;
+  font-size: 16px;
+  padding: 8px 26px;
+  background-color: #001965;
+  color: white;
+  border: none;
+}
+.btn-div{
+  text-align: right;
+  margin: 0;
+  margin-top: 50px;
+}
+#output-area{
+  background-color: #f6f5f4;
+  border-radius: 40px;
+  margin: 20px;
+  height: auto;
+  box-shadow: 6px 6px rgb(173, 173, 173);
+  color: #001965;
+  padding: 15px;
+}
+.see-result{
+  text-align: left;
+}
+.see-result p{
+  font-size: 25px;
+  margin:25px;
+}
+#output{
+  margin: 25px;
+  font-size: 25px;
+}
+#height-error{
+  color: rgb(243, 67, 36);
+  font-size: 12px;
+}
+#weight-error{
+  color: rgb(243, 67, 36);
+  font-size: 12px;
+}
+.containerbox{
+  padding: 100px;
+}
+/*exercise box*/
+.exercises{
+  width: 0px;
+  height: 0px;
+  background-color: #efdfeb;
+  margin: 70px 0;
+  border-top-left-radius: 40px;
+  border-bottom-left-radius: 40px;
+  padding-left: 20px;
+}
+.recommend{
+  width: 0px;
+  height: 0px;
+  background-color: #efdfeb;
+  margin: 70px 0;
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+}
+.under_button{
+  border-radius: 40px;
+  text-align: center;
+  font-size: 16px;
+  padding: 8px 26px;
+  background-color: #001965;
+  color: white;
+  border: none;
+}
+#output,.under_button{
+  align-items: end;
+}
+
+.tips_overweight{
+  display: none;
+  text-align: left;
+  color: #001965;
+}
+.tips_overweight h3{
+    margin: 10px 15px;
+}
+.tips_normal{
+  display: none;
+  text-align: left;
+  color: #001965;
+}
+.tips_normal h3{
+  margin: 10px 15px;
+}
+.tips_underweight{
+  display: none;
+  text-align: left;
+  color: #001965;
+}
+.tips_underweight h3{
+  margin: 10px 15px;
+}
+
+.exercises_overweight{
+  display: none;
+  text-align: left;
+  color: #001965;
+  margin: 0px 10px;
+}
+.exercises_overweight h3{
+  margin: 10px 15px;
+}
+.exercises_normal{
+  display: none;
+  text-align: left;
+  color: #001965;
+  margin: 0px 10px;
+}
+.exercises_normal h3{
+  margin: 10px 15px;
+}
+.exercises_underweight{
+  display: none;
+  text-align: left;
+  color: #001965;
+  margin: 0px 10px;
+}
+.exercises_underweight h3{
+  margin: 10px 15px;
+}
+@media only screen and (min-width: 1726px) and (max-width: 1776px){
+  .box{
+    width: 650px;
+    height: auto;
+  }
+  
+}
+@media only screen and (min-width: 1686px) and (max-width: 1726px){
+  .box{
+    width: 600px;
+    height: auto;
+  } 
+}
+@media only screen and (min-width: 1636px) and (max-width: 1686px){
+  .box{
+    width: 550px;
+    height: auto;
+  } 
+}
+@media only screen and (min-width: 1586px) and (max-width: 1636px){
+  .box{
+    width: 500px;
+    height: auto;
+  } 
+}
+/* ... Existing CSS ... */
+
+/* Media query for screen width between 1301px and 1586px */
+
+/* Media query for screen width between 1301px and 1586px */
+@media only screen and (min-width: 1001px) and (max-width: 1586px) {
+  .containerbox {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px; 
+  }
+
+  .box, .exercises, .recommend {
+    width: 1000px;
+    border-radius: 40px;
+    margin: 20px auto; 
+  }
+
+  .exercises {
+    width: 1000px !important;
+  }
+  .recommend{
+    width: 1000px !important;
+  }
+  .tips_overweight, .tips_normal, .tips_underweight {
+    display: none;
+    text-align: left;
+    color: #001965;
+    margin: 0px auto; /* Center the tips divs horizontally with auto margin */
+    padding: 0 20px; /* Add padding for spacing */
+  }
+  
+}
+@media only screen and (min-width: 350px) and (max-width: 700px) {
+  body{
+      justify-content: end;
+  }
+  .containerbox{
+    min-width: 130%;
+    position: relative;
+    left: -15%;
+  }
+}
+@media only screen and(max-width: 700px) {
+  .exercises, .recommend {
+    display: none;
+  }
+}
+.containerbox1{
+  background-color: white;
+  padding: 15px;
+}
+.contain{
+  background-color: rgb(129, 209, 236);
+  padding: 40px;
+}
+
+
+
